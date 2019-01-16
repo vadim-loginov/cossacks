@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Cossacks balancer</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="frame" id="app">
+		<div class="frame__horizontal-bar"></div>
+		<div class="frame__horizontal-bar frame__horizontal-bar--bottom"></div>
+		<div class="frame__vertical-bar"></div>
+		<div class="frame__vertical-bar frame__vertical-bar--right"></div>
+		<div class="frame__corner frame__corner--left-top"></div>
+		<div class="frame__corner frame__corner--right-top"></div>
+		<div class="frame__corner frame__corner--left-bottom"></div>
+		<div class="frame__corner frame__corner--right-bottom"></div>
+		<div class="frame__title">Balancer</div>
+		<div class="list-wrap">
+
+			<!-- Players -->
+			<div class="list list--players">
+				<div class="list__head">
+					<div class="list__title">Players</div>
+				</div>
+				<div class="list__body">
+					<div class="list__body-content">
+						<div v-for="player in players" class="list__item">{{ player.name }}</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Wins -->
+			<div class="list list--wins">
+				<div class="list__head">
+					<div class="list__title">Wins</div>
+				</div>
+				<div class="list__body">
+					<div class="list__body-content">
+						<input
+							v-on:input="calcBalance"
+							v-for="player in players"
+							v-model="player.wins"
+							type="number"
+							min="0"
+							class="list__item"
+							placeholder="Enter wins count"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Teams -->
+			<div class="list list--teams">
+					<div class="list__head">
+						<div class="list__title">Teams (auto)</div>
+					</div>
+					<div class="list__body">
+						<div class="list__body-content">
+							<div v-for="player in players" class="list__item">{{ player.team }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Balance -->
+		<div class="frame__totals">
+			<input type="text" class="list__item" v-model="balance">
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+	<script src="js/main.js"></script>
+</body>
+</html>
