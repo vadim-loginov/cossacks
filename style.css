@@ -154,14 +154,9 @@ body {
 	color: inherit;
 	font-family: inherit;
 }
-input.list__item::-webkit-input-placeholder { color:transparent; }
-input.list__item:focus::-webkit-input-placeholder { color:gray; }
-input.list__item:focus:-moz-placeholder { color:gray; } /* FF 4-18 */
-input.list__item:focus::-moz-placeholder { color:gray; } /* FF 19+ */
-input.list__item:focus:-ms-input-placeholder { color:gray; } /* IE 10+ */
 
 input.list__item:focus {
-	outline: 1px solid gray;
+	outline: 1px solid #326bb4;
 }
 .frame__totals {
 	margin-top: 10px;
@@ -169,6 +164,6 @@ input.list__item:focus {
 }
 .frame__totals input.list__item,
 .frame__totals input.list__item:focus {
-	outline: 1px solid gray;
+	outline: 1px solid #aaa;
 	outline-offset: 0px;
 }
